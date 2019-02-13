@@ -1,0 +1,58 @@
+#include<stdio.h>
+int main()
+{
+    char enc[37]="\x55\x5b\x50\x56\x4a\x66\x54\x5b\x52\x5e\x5c\x54\x6e\x43\x1f\x6e\x41\x54\x6e\x43\x57\x58\x42\x6e\x58\x42\x6e\x5e\x5d\x5b\x48\x6e\x50\x42\x5c\x4c";
+	ck1(enc,36);
+	printf("%s\n",enc);
+	return 0;
+}
+
+.text:00401020 ck1             proc near               ; CODE XREF: j_ck1↑j
+.text:00401020
+.text:00401020 var_44          = byte ptr -44h
+.text:00401020 var_4           = dword ptr -4
+.text:00401020 arg_0           = dword ptr  8
+.text:00401020 arg_4           = dword ptr  0Ch
+.text:00401020
+.text:00401020                 push    ebp
+.text:00401021                 mov     ebp, esp
+.text:00401023                 sub     esp, 44h
+.text:00401026                 push    ebx
+.text:00401027                 push    esi
+.text:00401028                 push    edi
+.text:00401029                 lea     edi, [ebp+var_44]
+.text:0040102C                 mov     ecx, 11h
+.text:00401031                 mov     eax, 0CCCCCCCCh
+.text:00401036                 rep stosd
+.text:00401038                 mov     [ebp+var_4], 0
+.text:0040103F                 jmp     short loc_40104A
+.text:00401041 ; ---------------------------------------------------------------------------
+.text:00401041
+.text:00401041 loc_401041:                             ; CODE XREF: ck1+49↓j
+.text:00401041                 mov     eax, [ebp+var_4]
+.text:00401044                 add     eax, 1
+.text:00401047                 mov     [ebp+var_4], eax
+.text:0040104A
+.text:0040104A loc_40104A:                             ; CODE XREF: ck1+1F↑j
+.text:0040104A                 mov     ecx, [ebp+var_4]
+.text:0040104D                 cmp     ecx, [ebp+arg_4]
+.text:00401050                 jge     short loc_40106B
+.text:00401052                 mov     edx, [ebp+arg_0]
+.text:00401055                 add     edx, [ebp+var_4]
+.text:00401058                 movsx   eax, byte ptr [edx]
+.text:0040105B                 xor     eax, 30h
+.text:0040105E                 add     eax, 1
+.text:00401061                 mov     ecx, [ebp+arg_0]
+.text:00401064                 add     ecx, [ebp+var_4]
+.text:00401067                 mov     [ecx], al
+.text:00401069                 jmp     short loc_401041
+.text:0040106B ; ---------------------------------------------------------------------------
+.text:0040106B
+.text:0040106B loc_40106B:                             ; CODE XREF: ck1+30↑j
+.text:0040106B                 pop     edi
+.text:0040106C                 pop     esi
+.text:0040106D                 pop     ebx
+.text:0040106E                 mov     esp, ebp
+.text:00401070                 pop     ebp
+.text:00401071                 retn
+.text:00401071 ck1             endp

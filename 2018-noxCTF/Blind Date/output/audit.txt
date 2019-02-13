@@ -1,0 +1,25 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Mon Sep 10 13:38:44 2018
+Invocation: foremost re_BlindData.jpeg 
+Output directory: /Users/qianfei/Downloads/Blind Date/output
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: re_BlindData.jpeg
+Start: Mon Sep 10 13:38:44 2018
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.jpg 	      37 KB 	          0 	 
+1:	00000075.zip 	      320 B 	      38618 	 
+Finish: Mon Sep 10 13:38:44 2018
+
+2 FILES EXTRACTED
+	
+jpg:= 1
+zip:= 1
+------------------------------------------------------------------
+
+Foremost finished at Mon Sep 10 13:38:44 2018
