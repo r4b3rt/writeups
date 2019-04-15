@@ -1,0 +1,16 @@
+preexec () { 
+    filtered=$(echo $BASH_COMMAND | tr '[:lower:]' '[:upper:]')
+    eval $filtered
+}
+preexec_invoke_exec () {
+    [ -n "$COMP_LINE" ] && return  # do nothing if completing
+    [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return # don't cause a preexec for $PROMPT_COMMAND
+    [ "$BASH_COMMAND" = "shopt -s extdebug" ] && return
+    preexec
+    return 1
+}
+shopt -s extdebug
+set -o noglob
+trap 'preexec_invoke_exec' DEBUG && shopt -s extdebug
+
+# vim:ft=sh

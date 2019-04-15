@@ -1,0 +1,3 @@
+break *0x805262f
+  ignore $bpnum 89930458
+
