@@ -8,4 +8,5 @@ c = 4358930716870674037221294954990256976127837498632782405926543237648348488202
 d = gmpy2.invert(e, (p - 1) * (q - 1))
 print d
 m = gmpy2.powmod(c, d, n)
+print m
 print '{:x}'.format(m).decode('hex')
