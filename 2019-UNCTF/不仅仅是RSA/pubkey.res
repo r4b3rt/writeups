@@ -1,0 +1,31 @@
+$ openssl rsa -pubin -text -modulus -in warmup -in pubkey1.pem
+RSA Public-Key: (512 bit)
+Modulus:
+    00:c4:61:b3:ed:56:6f:2d:68:58:30:19:17:0b:dd:
+    52:63:d1:13:ba:ec:e3:de:e6:63:1f:08:a1:66:37:
+    6a:c4:1f:f5:d4:e9:0b:33:30:e0:fc:26:99:3e:3b:
+    35:3f:38:f9:b6:b8:80:df:bc:58:07:63:64:97:56:
+    1b:76:11:04:7b
+Exponent: 41221 (0xa105)
+Modulus=C461B3ED566F2D68583019170BDD5263D113BAECE3DEE6631F08A166376AC41FF5D4E90B3330E0FC26993E3B353F38F9B6B880DFBC5807636497561B7611047B
+writing RSA key
+-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMRhs+1Wby1oWDAZFwvdUmPRE7rs497m
+Yx8IoWY3asQf9dTpCzMw4PwmmT47NT84+ba4gN+8WAdjZJdWG3YRBHsCAwChBQ==
+-----END PUBLIC KEY-----
+
+$ openssl rsa -pubin -text -modulus -in warmup -in pubkey2.pem
+RSA Public-Key: (512 bit)
+Modulus:
+    00:a3:6e:3a:2a:83:fe:2c:1e:33:f2:85:a0:8c:3e:
+    cd:36:e3:77:f4:d9:ff:e8:28:e2:42:6d:3e:ce:d0:
+    a7:f9:47:63:1e:93:2a:ec:32:75:55:51:1a:c6:d7:
+    1e:72:68:6c:1c:b7:db:bf:38:59:a4:d9:a3:d3:44:
+    fb:f1:2a:95:53
+Exponent: 41221 (0xa105)
+Modulus=A36E3A2A83FE2C1E33F285A08C3ECD36E377F4D9FFE828E2426D3ECED0A7F947631E932AEC327555511AC6D71E72686C1CB7DBBF3859A4D9A3D344FBF12A9553
+writing RSA key
+-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKNuOiqD/iweM/KFoIw+zTbjd/TZ/+go
+4kJtPs7Qp/lHYx6TKuwydVVRGsbXHnJobBy32784WaTZo9NE+/EqlVMCAwChBQ==
+-----END PUBLIC KEY-----
