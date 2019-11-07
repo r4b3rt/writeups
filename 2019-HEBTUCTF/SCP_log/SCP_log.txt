@@ -1,0 +1,19 @@
+[System-info] SCP基金会项目安保系统初始化完成！
+[System-info] e=65537！
+[System-info] 控制-收容-保护 持续运行中！
+
+[System-info] 监测到D级人员即将进入Safe级SCP项目！
+[System-info] 请验证身份！否则将执行BERRYMAN-LANGFORD模因抹杀触媒处决。
+[System-info] n = 264875192370170517892762732090900080619
+[System-info] c = 47819707739737226624777301005156120764
+[System-info] 请输入 m 的信息！
+[ D-15 -info] m is ████████████████
+[System-info] m 正确！欢迎您！已获授权的人员！
+
+[System-info] 监测到C级人员即将进入Euclid级SCP项目！
+[System-info] 请验证身份！否则将执行BERRYMAN-LANGFORD模因抹杀触媒处决。
+[System-info] n = 106158821499931842590118125106329600437515392507293920805755481915579329343519
+[System-info] c = 92745720427756739394340901560209310176270205381847603138854431221975461027052
+[System-info] 请输入 m 的信息！
+[ C-03 -info] m is ██████████████████████████
+[System-info] m 正确！欢迎您！已获授权的人员！
