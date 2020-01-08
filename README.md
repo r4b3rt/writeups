@@ -1,3 +1,3 @@
-# ctf-writeups
+# Some CTF writeups
 
-Some CTF writeups by AssassinQ
+Some CTF writeups by AssassinQ.
