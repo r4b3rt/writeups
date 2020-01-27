@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>🍚🍵🐈🐼</title>
+</head>
+<body>
+<script src="./aes.js"></script>
+<p id="flag"></p>
+<script>
+var answer = CryptoJS["AES"]["decrypt"]("U2FsdGVkX18kRm6FDkRVQfVuNPTxyOnJzpu8QnI/9UKoCXp6hQcley11nBnLIItj", "ok boomer");
+var flag = answer["toString"](CryptoJS["enc"]["Utf8"]);
+document["getElementById"]("flag")["innerHTML"] = flag;
+console.log(flag);
+</script>
+</body>
+</html>

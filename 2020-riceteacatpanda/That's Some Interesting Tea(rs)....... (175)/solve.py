@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+import base64
+import base58
+import base62
+
+s = 'O53GG4CSJRHEWQT2GJ5HC4CGOM4VKY3SOZGECZ2YNJTXO6LROV3DIR3CK4ZEMWCDHFMTOWSXGRSHU23DLJVTS5BXOQZXMU3ONJSFKRCVO5BEGVSELJSGUNSYLI2XQ32UOI3FKWDYMJQWOMKQOJ4XIU2WN5KTKWT2INUW44SZONGUUN2BMFRTQQJYKM3WGSSUNVXGEU3THFIFUSDHIVWVEQ3LJVUXEMSXK5MXSZ3TG5JXORKTMZRFIVQ='
+print(s)
+
+s = base64.b32decode(s)
+print(s)
+
+s = base58.b58decode(s)
+print(s)
+
+s = base62.decodebytes(bytes.decode(s))
+print(s)
+
+s = base64.b64decode(s)
+
+print(s)
+
+s = base64.a85decode(s)
+print(s)
+
