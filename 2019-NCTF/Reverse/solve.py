@@ -1,50 +1,51 @@
-#!/usr/bin/env python3
-from base64 import b64decode
+#!/usr/bin/env python
+from des import *
 from itertools import product
-from DES import *            # https://github.com/soreatu/Cryptography/blob/master/DES.py
 
-guess_8bit = list(product(range(2), repeat=8))
-not_in_PC2 = [9,18,22,25,35,38,43,54]
+sub_key_11 = [0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1]
 
-def re_PC2(sbkey):
-    # 48-bit -> 56-bit
-    res = [0]*56
-    for i in range(len(sbkey)):
-        res[PC_2_table[i]-1] = sbkey[i]
-    return res # ok
+def bruteforce_sub_key(sub_key, idx):
+    inversed = [0] * 56
+    for i in range(len(sub_key)):
+        inversed[PC_2[i] - 1] = sub_key[i]
+    guess_pos = [9, 18, 22, 25, 35, 38, 43, 54]
+    guess_list = list(product(range(2), repeat=8))
+    for j in range(8):
+        inversed[guess_pos[j] - 1] = guess_list[idx][j]
+    return inversed
 
-def guess_CiDi10(sbkey, t):
-    res = re_PC2(sbkey)
-    for i in range(8):
-        res[not_in_PC2[i]-1] = guess_8bit[t][i]
-    return res # ok
+def get_sub_keys(single_key, rounds):
+    lkey = single_key[:28]
+    rkey = single_key[28:]
+    i = rounds + 1
+    while i < rounds + 16:
+        j = 0
+        while j < SHIFT[i % 16]:
+            lkey.append(lkey[0])
+            del lkey[0]
+            rkey.append(rkey[0])
+            del rkey[0]
+            j += 1
+        sub_keys[i % 16] = permute(PC_2, lkey + rkey)
+        i += 1
 
-def guess_allsbkey(roundkey, r, t):
-    sbkey = [[]]*16
-    sbkey[r] = roundkey
-    CiDi = guess_CiDi10(roundkey, t)
-    Ci, Di = CiDi[:28], CiDi[28:]
-    for i in range(r+1,r+16):
-        Ci, Di = LR(Ci, Di, i%16)
-        sbkey[i%16] = PC_2(Ci+Di)
-    return sbkey # ok
+ciphertext = open('cipher', 'rb').read()
+print len(ciphertext)
 
-def long_des_enc(c, k):
-    assert len(c) % 8 == 0
-    res = b''
-    for i in range(0,len(c),8):
-        res += DES_enc(c[i:i+8], k)
-    return res
+def bruteforce_plaintext():
+    rounds = 10
+    sub_keys[rounds] = sub_key_11
+    for i in range(2 ** 8):
+        single_key = bruteforce_sub_key(sub_key_11, i)
+        get_sub_keys(single_key, rounds)
+        plaintext = ''
+        for j in range(len(ciphertext) / 8):
+            block = convert_string_to_bitlist(ciphertext[8 * j:8 * j + 8])
+            plaintext += convert_bitlist_to_string(des_cipher(block, DECRYPT))
+        if plaintext.startswith('NCTF'):
+            print plaintext
+            return True
+    return False
 
-def try_des(cipher, roundkey):
-    for t in range(256):
-        allkey = guess_allsbkey(roundkey, 10, t)
-        plain = long_des_enc(cipher, allkey[::-1])
-        if plain.startswith(b'NCTF'):
-            print(plain)
+assert bruteforce_plaintext()
 
-if __name__ == "__main__":
-    cipher = b64decode(b'm0pT2YYUIaL0pjdaX2wsxwedViYAaBkZA0Rh3bUmNYVclBlvWoB8VYC6oSUjfbDN')
-    sbkey10 = [0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1]
-    try_des(cipher, sbkey10)
-# b'NCTF{1t_7urn3d_0u7_7h47_u_2_g00d_@_r3v3rs3_1snt}'

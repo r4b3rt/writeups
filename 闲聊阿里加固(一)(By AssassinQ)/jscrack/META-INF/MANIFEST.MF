@@ -1,0 +1,66 @@
+Manifest-Version: 1.0
+Created-By: 1.7.0_65 (Oracle Corporation)
+
+Name: lib/x86/libhack.so
+SHA1-Digest: ehbAsSV1Gc0Gt7kPTz7aqAdA128=
+
+Name: res/drawable-hdpi/android.jpg
+SHA1-Digest: vY4idGFNNthzsSIGUHNGYmPikQo=
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: AfPh3OJoypH966MludSW6f1RHg4=
+
+Name: lib/armeabi/libtranslate.so
+SHA1-Digest: gu1l5XckMPpiiXRwdwnNqvS/h7Y=
+
+Name: assets/fak.jar
+SHA1-Digest: 8oOOvl7SqmH8/1QILzWSmxfaYCw=
+
+Name: lib/x86/libtranslate.so
+SHA1-Digest: vJ9T/eweSZirO/dE+P9n0W2deSs=
+
+Name: lib/x86/libmobisec.so
+SHA1-Digest: Z5bLg/88Jb4Jyqd18CgSkjGHeho=
+
+Name: res/layout/webviewlayout.xml
+SHA1-Digest: gxl3ubhFSKZg1UUqVlCBc4z5Pq4=
+
+Name: lib/armeabi-v7a/libmobisec.so
+SHA1-Digest: K0+ZzWXkPZ1kWNinZgwZLXa2zTE=
+
+Name: res/drawable-hdpi/android1.jpg
+SHA1-Digest: hO7lh59JS+Fy2QVeIxS+L5AoYnc=
+
+Name: lib/armeabi-v7a/libtranslate.so
+SHA1-Digest: DzHM5kJTwh4StWqJCUWyVGhC0Ps=
+
+Name: lib/armeabi/libmobisec.so
+SHA1-Digest: E3JuuVkeyvXWsd7Zm+IOoi4sr/8=
+
+Name: resources.arsc
+SHA1-Digest: gddRKx/fefBQQBU4nQBFnHTtJeY=
+
+Name: classes.dex
+SHA1-Digest: cptZnMWHZLPOQMMJ3UvWS5W+wZ4=
+
+Name: res/drawable-xxhdpi/ic_launcher.png
+SHA1-Digest: GVIfdEOBv4gEny2T1jDhGGsZOBo=
+
+Name: AndroidManifest.xml
+SHA1-Digest: il9+wrz0/cazt5QG8UgcVX0nAx8=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: RRxOSvpmhVfCwiprVV/wZlaqQpw=
+
+Name: lib/armeabi-v7a/libhack.so
+SHA1-Digest: JAqCMOumjA5unFRn+oRHD10PSVk=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: 8INsc6kdWdT8n2UQ9kceZ4OeLY0=
+
+Name: assets/cls.jar
+SHA1-Digest: kTXWcRkB/Gp0rPeucDZ4YL/f1Zc=
+
+Name: lib/armeabi/libhack.so
+SHA1-Digest: BTN3giHReZCTRzVVWRy7g/UZ7UE=
+
