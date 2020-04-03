@@ -1,0 +1,777 @@
+[H]		dec eax
+   0:   48                      dec    eax
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[He]	dec eax ; xor gs:[ecx], xx
+   0:   48                      dec    eax
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Li]	dec esp ; imul esi, [eax], xx
+   0:   4c                      dec    esp
+   1:   69 30 31 32 33 34       imul   esi,DWORD PTR [eax],0x34333231
+   7:   35 36 37 38 39          xor    eax,0x39383736
+[Be]	inc edx ; xor gs:[ecx], xx
+   0:   42                      inc    edx
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[B]		inc edx
+   0:   42                      inc    edx
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[C]		inc ebx
+   0:   43                      inc    ebx
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[N]		dec esi
+   0:   4e                      dec    esi
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[O]		dec edi
+   0:   4f                      dec    edi
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[F]		inc esi
+   0:   46                      inc    esi
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ne]	dec esi ; xor gs:[ecx], xx
+   0:   4e                      dec    esi
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Na]	dec esi ; popa
+   0:   4e                      dec    esi
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Mg]	dec ebp ; xxxx
+   0:   4d                      dec    ebp
+   1:   67 30 31                xor    BYTE PTR [bx+di],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Al]	inc ecx ; ins es:[edi], dx
+   0:   41                      inc    ecx
+   1:   6c                      ins    BYTE PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Si]	push ebx ; imul esi, [eax], xx
+   0:   53                      push   ebx
+   1:   69 30 31 32 33 34       imul   esi,DWORD PTR [eax],0x34333231
+   7:   35 36 37 38 39          xor    eax,0x39383736
+[P]		push eax
+   0:   50                      push   eax
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[S]		push ebx
+   0:   53                      push   ebx
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cl]	inc ebx ; ins es:[edi], dx
+   0:   43                      inc    ebx
+   1:   6c                      ins    BYTE PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ar]	inc ecx ; jb xx
+   0:   41                      inc    ecx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[K]		dec ebx
+   0:   4b                      dec    ebx
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ca]	inc ebx ; popa
+   0:   43                      inc    ebx
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Sc]	push ebx ; xxxx
+   0:   53                      push   ebx
+   1:   63 30                   arpl   WORD PTR [eax],si
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ti]	push esp ; imul esi, [eax], xxxx
+   0:   54                      push   esp
+   1:   69 30 31 32 33 34       imul   esi,DWORD PTR [eax],0x34333231
+   7:   35 36 37 38 39          xor    eax,0x39383736
+[V]		push esi
+   0:   56                      push   esi
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cr]	inc ebx ; jb xx
+   0:   43                      inc    ebx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Mn]	dec ebp ; outs dx, ds:[esi]
+   0:   4d                      dec    ebp
+   1:   6e                      outs   dx,BYTE PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Fe]	inc esi ; xxxx
+   0:   46                      inc    esi
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Co]	inc ebx ; outs dx, ds:[esi]
+   0:   43                      inc    ebx
+   1:   6f                      outs   dx,DWORD PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ni]	dec esi ; imul esi, [eax], xxxx
+   0:   4e                      dec    esi
+   1:   69 30 31 32 33 34       imul   esi,DWORD PTR [eax],0x34333231
+   7:   35 36 37 38 39          xor    eax,0x39383736
+[Cu]	inc ebx ; jne xx
+   0:   43                      inc    ebx
+   1:   75 30                   jne    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Zn]	pop edx ; outs dx, ds:[esi]
+   0:   5a                      pop    edx
+   1:   6e                      outs   dx,BYTE PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ga]	inc edi ; popa
+   0:   47                      inc    edi
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ge]	inc edi ; xxxx
+   0:   47                      inc    edi
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[As]	inc ecx ; jae xx
+   0:   41                      inc    ecx
+   1:   73 30                   jae    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Se]	push ebx ; xxxx
+   0:   53                      push   ebx
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Br]	inc edx ; jb xx
+   0:   42                      inc    edx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Kr]	dec ebx ; jb xx
+   0:   4b                      dec    ebx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Rb]	push edx ; xxxx
+   0:   52                      push   edx
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Sr]	push ebx ; jb xx
+   0:   53                      push   ebx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Y]		pop ecx
+   0:   59                      pop    ecx
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Zr]	pop edx ; jb xx
+   0:   5a                      pop    edx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Nb]	dec esi ; xxxx
+   0:   4e                      dec    esi
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Mo]	dec ebp ; outs dx, ds:[esi]
+   0:   4d                      dec    ebp
+   1:   6f                      outs   dx,DWORD PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Tc]	push esp ; xxxx
+   0:   54                      push   esp
+   1:   63 30                   arpl   WORD PTR [eax],si
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ru]	push edx ; jne xx
+   0:   52                      push   edx
+   1:   75 30                   jne    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Rh]	push edx ; push xxxx
+   0:   52                      push   edx
+   1:   68 30 31 32 33          push   0x33323130
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Pd]	push eax ; xxxx
+   0:   50                      push   eax
+   1:   64 30 31                xor    BYTE PTR fs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ag]	inc ecx ; xxxx
+   0:   41                      inc    ecx
+   1:   67 30 31                xor    BYTE PTR [bx+di],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cd]	inc ebx ; xxxx
+   0:   43                      inc    ebx
+   1:   64 30 31                xor    BYTE PTR fs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[In]	dec ecx ; outs dx, ds:[esi]
+   0:   49                      dec    ecx
+   1:   6e                      outs   dx,BYTE PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Sn]	push ebx ; outs dx, ds:[esi]
+   0:   53                      push   ebx
+   1:   6e                      outs   dx,BYTE PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Sb]	push ebx ; xxxx
+   0:   53                      push   ebx
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Te]	push esp ; xxxx
+   0:   54                      push   esp
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[I]		dec ecx
+   0:   49                      dec    ecx
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Xe]	pop eax ; xxxx
+   0:   58                      pop    eax
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cs]	inc ebx ; jae xx
+   0:   43                      inc    ebx
+   1:   73 30                   jae    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ba]	inc edx ; popa
+   0:   42                      inc    edx
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[La]	dec esp ; popa
+   0:   4c                      dec    esp
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ce]	inc ebx ; xxxx
+   0:   43                      inc    ebx
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Pr]	push eax ; jb xx
+   0:   50                      push   eax
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Nd]	dec esi ; xxxx
+   0:   4e                      dec    esi
+   1:   64 30 31                xor    BYTE PTR fs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Pm]	push eax ; ins es:[edi], dx
+   0:   50                      push   eax
+   1:   6d                      ins    DWORD PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Sm]	push ebx ; ins es:[edi], dx
+   0:   53                      push   ebx
+   1:   6d                      ins    DWORD PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Eu]	inc ebp ; jne xx
+   0:   45                      inc    ebp
+   1:   75 30                   jne    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Gd]	inc edi ; xxxx
+   0:   47                      inc    edi
+   1:   64 30 31                xor    BYTE PTR fs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Tb]	push esp ; xxxx
+   0:   54                      push   esp
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Dy]	inc esp ; jns xx
+   0:   44                      inc    esp
+   1:   79 30                   jns    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ho]	dec eax ; xxxx
+   0:   48                      dec    eax
+   1:   6f                      outs   dx,DWORD PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Er]	inc ebp ; jb xx
+   0:   45                      inc    ebp
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Tm]	push esp ; ins es:[edi], dx
+   0:   54                      push   esp
+   1:   6d                      ins    DWORD PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Yb]	pop ecx ; xxxx
+   0:   59                      pop    ecx
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Lu]	dec esp ; jne xx
+   0:   4c                      dec    esp
+   1:   75 30                   jne    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Hf]	dec eax ; xxxx
+   0:   48                      dec    eax
+   1:   66 30 31                data16 xor BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ta]	push esp ; popa
+   0:   54                      push   esp
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[W]		push edi
+   0:   57                      push   edi
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Re]	push edx ; xxxx
+   0:   52                      push   edx
+   1:   65 30 31                xor    BYTE PTR gs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Os]	dec edi ; jae xx
+   0:   4f                      dec    edi
+   1:   73 30                   jae    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ir]	dec ecx ; jb xx
+   0:   49                      dec    ecx
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Pt]	push eax ; je xx
+   0:   50                      push   eax
+   1:   74 30                   je     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Au]	inc ecx ; jne xx
+   0:   41                      inc    ecx
+   1:   75 30                   jne    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Hg]	dex eax ; xxxx
+   0:   48                      dec    eax
+   1:   67 30 31                xor    BYTE PTR [bx+di],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Tl]	push esp ; ins es:[edi], dx
+   0:   54                      push   esp
+   1:   6c                      ins    BYTE PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Pb]	push eax ; xxxx
+   0:   50                      push   eax
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Bi]	inc edx ; imul esi, [eax], xx
+   0:   42                      inc    edx
+   1:   69 30 31 32 33 34       imul   esi,DWORD PTR [eax],0x34333231
+   7:   35 36 37 38 39          xor    eax,0x39383736
+[Po]	push eax ; outs dx, ds:[esi]
+   0:   50                      push   eax
+   1:   6f                      outs   dx,DWORD PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[At]	inc ecx ; je xx
+   0:   41                      inc    ecx
+   1:   74 30                   je     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Rn]	push edx ; outs dx, ds:[esi]
+   0:   52                      push   edx
+   1:   6e                      outs   dx,BYTE PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Fr]	inc esi ; jb xx
+   0:   46                      inc    esi
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ra]	push edx ; popa
+   0:   52                      push   edx
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Ac]	inc ecx ; xxxx
+   0:   41                      inc    ecx
+   1:   63 30                   arpl   WORD PTR [eax],si
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Th]	push esp ; push xxxx
+   0:   54                      push   esp
+   1:   68 30 31 32 33          push   0x33323130
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Pa]	push eax ; popa
+   0:   50                      push   eax
+   1:   61                      popa   
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[U]		push ebp
+   0:   55                      push   ebp
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[Np]	dec esi ; jo xx
+   0:   4e                      dec    esi
+   1:   70 30                   jo     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Pu]	push eax ; jne xx
+   0:   50                      push   eax
+   1:   75 30                   jne    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Am]	inc ecx ; ins es:[edi], dx
+   0:   41                      inc    ecx
+   1:   6d                      ins    DWORD PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cm]	inc ebx ; ins es:[edi], dx
+   0:   43                      inc    ebx
+   1:   6d                      ins    DWORD PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Bk]	inc edx ; imul esi, [eax], xx
+   0:   42                      inc    edx
+   1:   6b 30 31                imul   esi,DWORD PTR [eax],0x31
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cf]	inc ebx ; xxxx
+   0:   43                      inc    ebx
+   1:   66 30 31                data16 xor BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Es]	inc ebp ; jae xx
+   0:   45                      inc    ebp
+   1:   73 30                   jae    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Fm]	inc esi ; ins es:[edi], dx
+   0:   46                      inc    esi
+   1:   6d                      ins    DWORD PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Md]	dec ebp ; xxxx
+   0:   4d                      dec    ebp
+   1:   64 30 31                xor    BYTE PTR fs:[ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[No]	dec esi ; outs dx, ds:[esi]
+   0:   4e                      dec    esi
+   1:   6f                      outs   dx,DWORD PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Lr]	dec esp ; jb xx
+   0:   4c                      dec    esp
+   1:   72 30                   jb     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Rf]	push edx ; xxxx
+   0:   52                      push   edx
+   1:   66 30 31                data16 xor BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Db]	inc esp ; xxxx
+   0:   44                      inc    esp
+   1:   62 30                   bound  esi,QWORD PTR [eax]
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Sg]	push xx ; xxxx
+   0:   53                      push   ebx
+   1:   67 30 31                xor    BYTE PTR [bx+di],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Bh]	inc edx ; push xxxx
+   0:   42                      inc    edx
+   1:   68 30 31 32 33          push   0x33323130
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Hs]	dec eax ; jae xx
+   0:   48                      dec    eax
+   1:   73 30                   jae    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Mt]	dec ebp ; je xx
+   0:   4d                      dec    ebp
+   1:   74 30                   je     0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Ds]	inc esp, jae xx
+   0:   44                      inc    esp
+   1:   73 30                   jae    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[Rg]	push edx ; xxxx
+   0:   52                      push   edx
+   1:   67 30 31                xor    BYTE PTR [bx+di],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Cn]	inc ebx ; outs dx, ds:[esi]
+   0:   43                      inc    ebx
+   1:   6e                      outs   dx,BYTE PTR ds:[esi]
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Fl]	inc esi ; ins es:[edi], dx
+   0:   46                      inc    esi
+   1:   6c                      ins    BYTE PTR es:[edi],dx
+   2:   30 31                   xor    BYTE PTR [ecx],dh
+   4:   32 33                   xor    dh,BYTE PTR [ebx]
+   6:   34 35                   xor    al,0x35
+   8:   36 37                   ss aaa 
+   a:   38 39                   cmp    BYTE PTR [ecx],bh
+[Lv]	dec esp ; jbe xx
+   0:   4c                      dec    esp
+   1:   76 30                   jbe    0x33
+   3:   31 32                   xor    DWORD PTR [edx],esi
+   5:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[0]
+   0:   30 30                   xor    BYTE PTR [eax],dh
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[1]
+   0:   31 30                   xor    DWORD PTR [eax],esi
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[2]
+   0:   32 30                   xor    dh,BYTE PTR [eax]
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[3]
+   0:   33 30                   xor    esi,DWORD PTR [eax]
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[4]
+   0:   34 30                   xor    al,0x30
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[5]
+   0:   35 30 31 32 33          xor    eax,0x33323130
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[6]
+   0:   36 30 31                xor    BYTE PTR ss:[ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[7]
+   0:   37                      aaa    
+   1:   30 31                   xor    BYTE PTR [ecx],dh
+   3:   32 33                   xor    dh,BYTE PTR [ebx]
+   5:   34 35                   xor    al,0x35
+   7:   36 37                   ss aaa 
+   9:   38 39                   cmp    BYTE PTR [ecx],bh
+[8]
+   0:   38 30                   cmp    BYTE PTR [eax],dh
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
+[9]
+   0:   39 30                   cmp    DWORD PTR [eax],esi
+   2:   31 32                   xor    DWORD PTR [edx],esi
+   4:   33 34 35 36 37 38 39    xor    esi,DWORD PTR [esi*1+0x39383736]
