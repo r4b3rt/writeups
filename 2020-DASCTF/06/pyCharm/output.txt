@@ -1,0 +1,93 @@
+magic 03f30d0a
+moddate 6a76e75e00000000 (Mon Jun 15 13:23:54 2020)
+code
+   argcount 0
+   nlocals 0
+   stacksize 5
+   flags 0040
+   code
+      71030071010064010000006401006c00005a00006402005a010065020064
+      03008301005a03006500006a04006503008301005a050065060065050083
+      01005a0700782700650800640400640500830200445d16005a0900650700
+      6509006302001964060037033c714900576407006a0a006507008301005a
+      0b00650b006501006b020072860064080047486e05006409004748640100
+      53
+  1           0 JUMP_ABSOLUTE            3
+        >>    3 JUMP_ABSOLUTE         1536
+              6 LOAD_CONST           25855
+              9 STOP_CODE           
+             10 STOP_CODE           
+             11 LOAD_CONST               1 (None)
+             14 IMPORT_NAME              0 (base64)
+             17 STORE_NAME               0 (base64)
+             20 LOAD_CONST               2 ('YamaNalaZaTacaxaZaDahajaYamaIa0aNaDaUa3aYajaUawaNaWaNajaMajaUawaNWI3M2NhMGM=')
+             23 STORE_NAME               1 (a)
+             26 LOAD_NAME                2 (raw_input)
+             29 LOAD_CONST               3 ('Are u ready?')
+             32 CALL_FUNCTION            1
+             35 STORE_NAME               3 (flag)
+             38 LOAD_NAME                0 (base64)
+             41 LOAD_ATTR                4 (b64encode)
+             44 LOAD_NAME                3 (flag)
+             47 CALL_FUNCTION            1
+             50 STORE_NAME               5 (c)
+             53 LOAD_NAME                6 (list)
+             56 LOAD_NAME                5 (c)
+             59 CALL_FUNCTION            1
+             62 STORE_NAME               7 (d)
+             65 SETUP_LOOP              39 (to 107)
+             68 LOAD_NAME                8 (range)
+             71 LOAD_CONST               4 (0)
+             74 LOAD_CONST               5 (32)
+             77 CALL_FUNCTION            2
+             80 GET_ITER            
+             81 FOR_ITER                22 (to 106)
+             84 STORE_NAME               9 (i)
+             87 LOAD_NAME                7 (d)
+             90 LOAD_NAME                9 (i)
+             93 DUP_TOPX                 2
+             96 BINARY_SUBSCR       
+             97 LOAD_CONST               6 ('a')
+            100 INPLACE_ADD         
+            101 ROT_THREE           
+            102 STORE_SUBSCR        
+            103 JUMP_ABSOLUTE           73
+        >>  106 POP_BLOCK           
+        >>  107 LOAD_CONST               7 ('')
+            110 LOAD_ATTR               10 (join)
+            113 LOAD_NAME                7 (d)
+            116 CALL_FUNCTION            1
+            119 STORE_NAME              11 (ohh)
+            122 LOAD_NAME               11 (ohh)
+            125 LOAD_NAME                1 (a)
+            128 COMPARE_OP               2 (==)
+            131 POP_JUMP_IF_FALSE      134
+
+ 18     >>  134 LOAD_CONST               8 ('great!waht u input is the flag u wanna get.')
+            137 PRINT_ITEM          
+            138 PRINT_NEWLINE       
+            139 JUMP_FORWARD             5 (to 147)
+            142 LOAD_CONST               9 ('pity!')
+            145 PRINT_ITEM          
+            146 PRINT_NEWLINE       
+        >>  147 LOAD_CONST               1 (None)
+            150 RETURN_VALUE        
+   consts
+      -1
+      None
+      'YamaNalaZaTacaxaZaDahajaYamaIa0aNaDaUa3aYajaUawaNaWaNajaMajaUawaNWI3M2NhMGM='
+      'Are u ready?'
+      0
+      32
+      'a'
+      ''
+      'great!waht u input is the flag u wanna get.'
+      'pity!'
+   names ('base64', 'a', 'raw_input', 'flag', 'b64encode', 'c', 'list', 'd', 'range', 'i', 'join', 'ohh')
+   varnames ()
+   freevars ()
+   cellvars ()
+   filename 'pyCharm.py'
+   name '<module>'
+   firstlineno 1
+   lnotab 0c0206030c010f010c02160114020f020c010802
