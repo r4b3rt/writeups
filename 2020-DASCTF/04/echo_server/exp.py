@@ -4,7 +4,7 @@ from pwn import *
 context.log_level = 'debug'
 context.terminal = ['tmux', 'split', '-h']
 
-local = 0
+local = 1
 if local:
 	p = process('./test')
 	elf = ELF('./test')
