@@ -14,15 +14,23 @@
 ```bash
 $ tree .
 .
+├── Makefile
 ├── README.md
 ├── attachment
 │   ├── libc.so.6_cd7c1a035d24122798d97a47a10f6e2b71d58710aecfd392375f1aa9bdde164d
 │   └── pwnnn_ee7f3025cdbdc8ca19f4316c2a0b14dc32d908d4838029bd53ca8fb61c3b4529
+├── deploy
+│   ├── Dockerfile
+│   ├── bin
+│   │   ├── flag
+│   │   ├── libc.so.6
+│   │   └── pwn
+│   ├── ctf.xinetd
+│   ├── deploy.sh
+│   └── start.sh
 ├── exp.py
-└── src
-    ├── Makefile
-    └── pwnnn.cc
+└── pwnnn.cc
 
-2 directories, 6 files
+3 directories, 13 files
 ```
 
