@@ -1,0 +1,97 @@
+0x00 b'\x00'   00 41 42                add    BYTE PTR [rcx+0x42], al
+0x0a b'\n'   0a 41 42                or     al, BYTE PTR [rcx+0x42]
+0x20 b' '   20 41 42                and    BYTE PTR [rcx+0x42], al
+0x21 b'!'   21 41 42                and    DWORD PTR [rcx+0x42], eax
+0x22 b'"'   22 41 42                and    al, BYTE PTR [rcx+0x42]
+0x23 b'#'   23 41 42                and    eax, DWORD PTR [rcx+0x42]
+0x24 b'$'   24 41                   and    al, 0x41
+0x25 b'%'   25 41 42 43 44          and    eax, 0x44434241
+0x26 b'&'   26 41                   es rex.B
+0x27 b"'"   27                      (bad)  
+0x28 b'('   28 41 42                sub    BYTE PTR [rcx+0x42], al
+0x29 b')'   29 41 42                sub    DWORD PTR [rcx+0x42], eax
+0x2a b'*'   2a 41 42                sub    al, BYTE PTR [rcx+0x42]
+0x2b b'+'   2b 41 42                sub    eax, DWORD PTR [rcx+0x42]
+0x2c b','   2c 41                   sub    al, 0x41
+0x2d b'-'   2d 41 42 43 44          sub    eax, 0x44434241
+0x2e b'.'   2e 41                   cs rex.B
+0x2f b'/'   2f                      (bad)  
+0x30 b'0'   30 41 42                xor    BYTE PTR [rcx+0x42], al
+0x31 b'1'   31 41 42                xor    DWORD PTR [rcx+0x42], eax
+0x32 b'2'   32 41 42                xor    al, BYTE PTR [rcx+0x42]
+0x33 b'3'   33 41 42                xor    eax, DWORD PTR [rcx+0x42]
+0x34 b'4'   34 41                   xor    al, 0x41
+0x35 b'5'   35 41 42 43 44          xor    eax, 0x44434241
+0x36 b'6'   36 41                   ss rex.B
+0x37 b'7'   37                      (bad)  
+0x38 b'8'   38 41 42                cmp    BYTE PTR [rcx+0x42], al
+0x39 b'9'   39 41 42                cmp    DWORD PTR [rcx+0x42], eax
+0x3a b':'   3a 41 42                cmp    al, BYTE PTR [rcx+0x42]
+0x3b b';'   3b 41 42                cmp    eax, DWORD PTR [rcx+0x42]
+0x3c b'<'   3c 41                   cmp    al, 0x41
+0x3d b'='   3d 41 42 43 44          cmp    eax, 0x44434241
+0x3e b'>'   3e 41                   ds rex.B
+0x3f b'?'   3f                      (bad)  
+0x40 b'@'   40                      rex
+0x41 b'A'   41                      rex.B
+0x42 b'B'   42                      rex.X
+0x43 b'C'   43                      rex.XB
+0x44 b'D'   44                      rex.R
+0x45 b'E'   45                      rex.RB
+0x46 b'F'   46                      rex.RX
+0x47 b'G'   47                      rex.RXB
+0x48 b'H'   48                      rex.W
+0x49 b'I'   49                      rex.WB
+0x4a b'J'   4a                      rex.WX
+0x4b b'K'   4b                      rex.WXB
+0x4c b'L'   4c                      rex.WR
+0x4d b'M'   4d                      rex.WRB
+0x4e b'N'   4e                      rex.WRX
+0x4f b'O'   4f                      rex.WRXB
+0x50 b'P'   50                      push   rax
+0x51 b'Q'   51                      push   rcx
+0x52 b'R'   52                      push   rdx
+0x53 b'S'   53                      push   rbx
+0x54 b'T'   54                      push   rsp
+0x55 b'U'   55                      push   rbp
+0x56 b'V'   56                      push   rsi
+0x57 b'W'   57                      push   rdi
+0x58 b'X'   58                      pop    rax
+0x59 b'Y'   59                      pop    rcx
+0x5a b'Z'   5a                      pop    rdx
+0x5b b'['   5b                      pop    rbx
+0x5c b'\\'   5c                      pop    rsp
+0x5d b']'   5d                      pop    rbp
+0x5e b'^'   5e                      pop    rsi
+0x5f b'_'   5f                      pop    rdi
+0x60 b'`'   60                      (bad)  
+0x61 b'a'   61                      (bad)  
+0x62 b'b'   62 41                   (bad)  
+0x63 b'c'   63 41 42                movsxd eax, DWORD PTR [rcx+0x42]
+0x64 b'd'   64 41                   fs rex.B
+0x65 b'e'   65 41                   gs rex.B
+0x66 b'f'   66 41                   data16 rex.B
+0x67 b'g'   67 41                   addr32 rex.B
+0x68 b'h'   68 41 42 43 44          push   0x44434241
+0x69 b'i'   69 41 42 43 44 45 46    imul   eax, DWORD PTR [rcx+0x42], 0x46454443
+0x6a b'j'   6a 41                   push   0x41
+0x6b b'k'   6b 41 42 43             imul   eax, DWORD PTR [rcx+0x42], 0x43
+0x6c b'l'   6c                      ins    BYTE PTR es:[rdi], dx
+0x6d b'm'   6d                      ins    DWORD PTR es:[rdi], dx
+0x6e b'n'   6e                      outs   dx, BYTE PTR ds:[rsi]
+0x6f b'o'   6f                      outs   dx, DWORD PTR ds:[rsi]
+0x70 b'p'   70 41                   jo     0x43
+0x71 b'q'   71 41                   jno    0x43
+0x72 b'r'   72 41                   jb     0x43
+0x73 b's'   73 41                   jae    0x43
+0x74 b't'   74 41                   je     0x43
+0x75 b'u'   75 41                   jne    0x43
+0x76 b'v'   76 41                   jbe    0x43
+0x77 b'w'   77 41                   ja     0x43
+0x78 b'x'   78 41                   js     0x43
+0x79 b'y'   79 41                   jns    0x43
+0x7a b'z'   7a 41                   jp     0x43
+0x7b b'{'   7b 41                   jnp    0x43
+0x7c b'|'   7c 41                   jl     0x43
+0x7d b'}'   7d 41                   jge    0x43
+0x7e b'~'   7e 41                   jle    0x43
