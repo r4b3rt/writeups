@@ -66,7 +66,7 @@ f'''
     mov rax, 0x13d
     mov rdi, 0x1
     syscall
-''' + # install_notify => syscall(__NR_seccomp, SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_NEW_LISTENER, &exo_prog)
+''' + # install_notify => syscall(__NR_seccomp, SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_NEW_LISTENER, &exp_prog)
 f'''
     mov r8, rax
     mov rax, 0x39
